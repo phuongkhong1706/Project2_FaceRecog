@@ -10,7 +10,7 @@ print(f"Using device: {device}")
 
 # Cấu hình đường dẫn lưu ảnh
 IMG_PATH = './data/test_images/'
-usr_name = input("Input your name: ")
+usr_name = input("Nhap MSSV: ")
 USR_PATH = os.path.join(IMG_PATH, usr_name)
 
 # Tạo thư mục nếu chưa tồn tại
@@ -18,12 +18,12 @@ if not os.path.exists(USR_PATH):
     os.makedirs(USR_PATH)
 
 # # input bang video
-video_path = input("Input the path to your video file: ")  # Nhập đường dẫn video
-cap = cv2.VideoCapture(video_path)  # Thay camera bằng video
+# video_path = input("Input the path to your video file: ")  # Nhập đường dẫn video
+# cap = cv2.VideoCapture(video_path)  # Thay camera bằng video
 # input bang camera
-# cap = cv2.VideoCapture(0)
-# cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-# cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+cap = cv2.VideoCapture(0)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
 # Kiểm tra camera
 if not cap.isOpened():

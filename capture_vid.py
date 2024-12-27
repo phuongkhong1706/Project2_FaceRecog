@@ -15,12 +15,13 @@ leap = 1
 
 mtcnn = MTCNN(margin = 20, keep_all=False, select_largest = True, post_process=False, device = device)
 # # input bang video
-# video_path = input("Input the path to your video file: ")  # Nhập đường dẫn video
-# cap = cv2.VideoCapture(video_path)  # Thay camera bằng video
+video_path = input("Input the path to your video file: ")  # Nhập đường dẫn video
+cap = cv2.VideoCapture(video_path)  # Thay camera bằng video
 # input bang camera
-cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH,640)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT,480)
+# cap = cv2.VideoCapture(0)
+# cap.set(cv2.CAP_PROP_FRAME_WIDTH,640)
+# cap.set(cv2.CAP_PROP_FRAME_HEIGHT,480)
+
 while cap.isOpened() and count:
     isSuccess, frame = cap.read()
     if mtcnn(frame) is not None and leap%2:
